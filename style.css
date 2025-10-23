@@ -1,84 +1,192 @@
+/* ==== ESTILOS GLOBALES ==== */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    font-family: 'Fira Code', monospace;
+  margin: 0;
+  background: linear-gradient(135deg, #0a0a0a, #1c1c24);
+  color: #e6e6e6;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==== LAYOUT PRINCIPAL ==== */
+.container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+/* ==== COLUMNA IZQUIERDA ==== */
+.sidebar {
+  background-color: #111;
+  border-right: 2px solid #00aaff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00aaff;
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px #007acc50;
+}
+
+.profile-section h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.career {
+  color: #00aaff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn, .btn-outline {
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn {
+  background: #007acc;
+  color: white;
+}
+
+.btn:hover {
+  background: #009fff;
+}
+
+.btn-outline {
+  border: 2px solid #007acc;
+  color: #00aaff;
+}
+
+.btn-outline:hover {
+  background: #007acc;
+  color: white;
+}
+
+.contact-info h2 {
+  border-left: 4px solid #007acc;
+  padding-left: 8px;
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ==== COLUMNA DERECHA ==== */
+.content {
+  padding: 40px 60px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #00aaff;
+  border-left: 4px solid #007acc;
+  padding-left: 10px;
+  font-size: 1.5rem;
+}
+
+.skills {
+  columns: 2;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills li {
+  margin: 8px 0;
+  font-size: 1.05rem;
+}
+
+.job {
+  background: #151515;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #007acc;
+}
+
+.project-card {
+  background-color: #151515;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #00aaff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.btn-small {
+  background: #007acc;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.btn-small:hover {
+  background: #009fff;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #222;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
   }
-  
-  .terminal {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #000;
+  .sidebar {
+    border-right: none;
+    border-bottom: 2px solid #00aaff;
+    align-items: center;
+    text-align: center;
   }
-  
-  .line {
-    margin-top: 20px;
-    color: #c586c0;
-    font-weight: bold;
+  .buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
   }
-  
-  .command {
-    color: #569cd6;
+  .content {
+    padding: 30px 20px;
   }
-  
-  .output {
-    margin-left: 20px;
-    color: #d4d4d4;
-    line-height: 1.6;
-  }
-  
-  .skills li {
-    list-style: none;
-    margin-bottom: 5px;
-    color: #9cdcfe;
-    font-size: 1em;
-  }
-  
-  .skills i {
-    margin-right: 8px;
-    color: #dcdcaa;
-  }
-  
-  .projects {
-    margin-top: 10px;
-  }
-  
-  .project {
-    margin-bottom: 20px;
-    background-color: #252526;
-    padding: 15px;
-    border-left: 4px solid #007acc;
-    border-radius: 6px;
-  }
-  
-  .project-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #4ec9b0;
-  }
-  
-  .project-desc {
-    color: #ce9178;
-    margin: 5px 0 10px;
-  }
-  
-  .btn {
-    background-color: #0e639c;
-    color: white;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Fira Code', monospace;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #1177bb;
-  }
-  
+}
