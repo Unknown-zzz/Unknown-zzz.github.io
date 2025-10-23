@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const lines = document.querySelectorAll(".line, .output");
-    lines.forEach((el, i) => {
-      el.style.opacity = 0;
-      setTimeout(() => {
-        el.style.opacity = 1;
-      }, i * 200);
-    });
+  const sections = document.querySelectorAll(".section");
+  sections.forEach((sec, i) => {
+    sec.style.opacity = 0;
+    setTimeout(() => {
+      sec.style.transition = "opacity 0.8s ease";
+      sec.style.opacity = 1;
+    }, i * 200);
   });
-  
+});
